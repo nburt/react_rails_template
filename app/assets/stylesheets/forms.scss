@@ -1,0 +1,43 @@
+@import "variables";
+
+.formGroup {
+  margin-bottom: $base-unit*8;
+  display: flex;
+  flex-direction: column;
+}
+
+.formField {
+  width: $base-unit*80;
+  height: $base-unit*10;
+  border-radius: $base-unit;
+  padding: $base-unit $base-unit*4;
+  font-size: $base-unit*4;
+  margin-top: $base-unit*2;
+  border: $base-unit/4 solid $warm-grey;
+
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 0.5;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    opacity: 0.5
+  }
+
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    opacity: 0.5
+  }
+}
+
+.buttonGroup {
+  margin-top: $base-unit*8;
+}
+
+.inputError {
+  margin-top: $base-unit*2;
+  color: $danger;
+}
+
+.formError {
+  margin-bottom: $base-unit*4;
+  color: $danger;
+}

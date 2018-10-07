@@ -1,0 +1,22 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <div class="formGroup">
+    <%= f.label :email %>
+    <%= f.email_field :email, autocomplete: 'username email', class:'formField', placeholder: 'jane@email.com', tabindex: 0 %>
+    <% if @user.errors.messages[:email].length > 0 %>
+      <div class="inputError">Email <%= @user.errors.messages[:email].join(", ") %>.</div>
+    <% end %>
+  </div>
+  <div class="formGroup">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: 'current-password', class:'formField', placeholder: '•••••••••••••••••', tabindex: 0 %>
+    <% if @user.errors.messages[:password].length > 0 %>
+      <div class="inputError">Password <%= @user.errors.messages[:password].join(", ") %>.</div>
+    <% end %>
+  </div>
+  <div class="buttonGroup">
+    <%= f.submit 'Sign Up', class: 'button buttonPrimary' %>
+    <p>Have an account? <%= link_to('Sign in', new_session_path) %></p>
+  </div>
+<% end %>

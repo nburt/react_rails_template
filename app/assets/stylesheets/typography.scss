@@ -1,0 +1,59 @@
+@import "variables";
+@import "fonts";
+
+a {
+  text-decoration: none;
+  color: $primary;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary-hover;
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: $base-unit*4 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  text-align: center;
+}
+
+h1 {
+  font-size: $base-unit * 10;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: $base-unit * 8;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: $base-unit * 7;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: $base-unit * 6;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+h5 {
+  font-size: $base-unit * 5;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+h6 {
+  font-size: $base-unit * 4;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}

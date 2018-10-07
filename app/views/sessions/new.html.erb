@@ -1,0 +1,20 @@
+<h1>Sign In</h1>
+
+<%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
+  <% flash.to_hash.each do |type, message| %>
+    <div class="formError"><%= message %></div>
+  <% end %>
+
+  <div class="formGroup">
+    <%= f.label :email %>
+    <%= f.email_field :email, autocomplete: 'username email', class: 'formField', autofocus: true, placeholder: 'jane@email.com' %>
+  </div>
+  <div class="formGroup">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'formField', autocomplete: 'current-password', placeholder: '•••••••••••••••••' %>
+  </div>
+  <div class="buttonGroup">
+    <%= f.submit 'Sign In', class: 'button buttonPrimary' %>
+    <p>Don't have an account? <%= link_to('Sign up', new_user_path) %></p>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+@import 'variables';
+
+.button {
+  display: inline-block;
+  padding: $base-unit*3 $base-unit*10;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: $base-unit/4 solid transparent;
+  border-radius: $base-unit;
+  font-size: $base;
+  transition: background 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.buttonPrimary {
+  color: $white;
+  background: $primary;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}

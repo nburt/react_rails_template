@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= @title.present? ? @title : "React Rails Template" %></title>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <%= stylesheet_link_tag 'frontend_app', media: 'all' %>
+  <%= stylesheet_link_tag 'font_awesome', media: 'all' %>
+
+  <%= favicon_link_tag "apple-touch-icon", rel: "apple-touch-icon", sizes: "180x180" %>
+  <%= favicon_link_tag "favicon-32x32.png", rel: "icon", type: "image/png", sizes: "32x32" %>
+  <%= favicon_link_tag "favicon-16x16.png", rel: "icon", type: "image/png", sizes: "16x16" %>
+  <%= favicon_link_tag "site.webmanifest", rel: "manifest" %>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+</body>
+</html>

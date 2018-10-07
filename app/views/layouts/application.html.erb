@@ -1,15 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ReactRailsTemplate</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title><%= @title.present? ? @title : "React Rails Template" %></title>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'font_awesome', media: 'all' %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= favicon_link_tag "apple-touch-icon", rel: "apple-touch-icon", sizes: "180x180" %>
+  <%= favicon_link_tag "favicon-32x32.png", rel: "icon", type: "image/png", sizes: "32x32" %>
+  <%= favicon_link_tag "favicon-16x16.png", rel: "icon", type: "image/png", sizes: "16x16" %>
+  <%= favicon_link_tag "site.webmanifest", rel: "manifest" %>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+<header class="header">
+  <div class="brandContainer">
+    <%= link_to('Home', root_path) %>
+  </div>
+
+  <nav id="mainMenu" role="navigation" class="mainMenu" aria-expanded="false" aria-label="Main menu">
+    <a href="#mainMenuToggle"
+       name="close mobile menu"
+       role="button"
+       id="mainMenuClose"
+       class="menuClose"
+       aria-expanded="false"
+       aria-controls="main-menu"
+       aria-label="Close main menu">
+
+      <span class="sr-only">Close main menu</span>
+      <i class="fa fa-close" aria-hidden="true"></i>
+    </a>
+    <ul class="navLinks">
+      <li class="navLink">
+        <%= link_to('Sign In', new_session_path) %>
+      </li>
+      <li class="navLink">
+        <%= link_to('Sign Up', new_user_path) %>
+      </li>
+    </ul>
+  </nav>
+  <a href="#mainMenuToggle"
+     name="toggle mobile menu"
+     class="backdrop"
+     tabindex="-1"
+     aria-hidden="true" hidden></a>
+  <a href="#mainMenu"
+     name="open mobile menu"
+     role="button"
+     id="mainMenuToggle"
+     class="menuToggle"
+     aria-expanded="false"
+     aria-controls="main-menu"
+     aria-label="Open main menu">
+
+    <span class="srOnly">Open main menu</span>
+    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+  </a>
+</header>
+
+<main class="container">
+  <%= yield %>
+</main>
+</body>
 </html>

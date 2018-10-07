@@ -1,0 +1,243 @@
+@import "variables";
+
+/* Screen reader only */
+.srOnly {
+  position: absolute;
+  width: $base-unit/4;
+  height: $base-unit/4;
+  padding: 0;
+  margin: -$base-unit/4;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Button styling */
+.menuToggle {
+  padding: $base-unit*3 $base-unit*4;
+  display: inline-block;
+}
+
+.menuToggle:hover,
+.menuToggle:focus {
+  //color: $pale-grey;
+}
+
+/*
+ Default styles + Mobile first
+ Offscreen menu style
+*/
+.mainMenu {
+  position: absolute;
+  left: $base-unit*-50;
+  top: 0;
+  height: 100%;
+  overflow-x: visible;
+  transition: left 0.3s ease,
+  box-shadow 0.3s ease;
+  z-index: 999;
+  font-family: "Open Sans", sans-serif;
+
+  @include for-tablet-landscape-up {
+    z-index: 1;
+  }
+}
+
+.mainMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: $base-unit*4 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, .5);
+  -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, .5);
+  box-shadow: -8px 0 8px rgba(0, 0, 0, .5);
+  width: $base-unit*50;
+  background: $white;
+
+  @include for-phone-only {
+    min-height: 100%;
+  }
+}
+
+.mainMenu a {
+  display: block;
+}
+
+.mainMenu a:hover,
+.mainMenu a:focus {
+  background: transparent;
+}
+
+.menuClose {
+  padding: $base-unit*4;
+}
+
+.mainMenu .menuClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*
+ On small devices, allow it to toggle...
+*/
+/*
+ :target for non-JavaScript
+ aria-expanded="true/false" will be for JavaScript
+*/
+.mainMenu:target,
+.mainMenu[aria-expanded="true"] {
+  left: 0;
+  -moz-box-shadow: 3px 0 12px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 3px 0 12px rgba(0, 0, 0, .25);
+  box-shadow: 3px 0 12px rgba(0, 0, 0, .25);
+}
+
+.mainMenu:target .menuClose,
+.mainMenu[aria-expanded="true"] .menuClose {
+  z-index: 1001;
+
+  @include for-tablet-landscape-up {
+    z-index: -1;
+  }
+}
+
+.mainMenu:target ul,
+.mainMenu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+
+  @include for-tablet-landscape-up {
+    z-index: -1;
+  }
+  padding: $base-unit*8 0 0 $base-unit*4;
+}
+
+/*
+ We could us `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.mainMenu:target + .backdrop,
+.mainMenu[aria-expanded="true"] + .backdrop {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  opacity: 0.75;
+  cursor: default;
+}
+
+@supports (position: fixed) {
+  .mainMenu,
+  .mainMenu:target + .backdrop,
+  .mainMenu[aria-expanded="true"] + .backdrop {
+    position: fixed;
+  }
+}
+
+/*
+ Larger screen styling
+ Horizontal menu
+*/
+@include for-tablet-landscape-up {
+  .menuToggle,
+  .mainMenu .menuClose {
+    display: none;
+  }
+
+  /* Undo positioning of off-canvas menu */
+  .mainMenu {
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto;
+
+    ul {
+      display: flex;
+
+      /* Undo off-canvas styling */
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      height: auto;
+      width: auto;
+      background: none;
+    }
+
+    a {
+      border: 0 !important; /* Remove borders from off-canvas styling */
+
+      &:hover, &:focus {
+        background: none; /* Remove background from off-canvas styling */
+      }
+    }
+  }
+}
+
+.header {
+  background-color: $white-three;
+  display: flex;
+  align-items: center;
+  padding: $base-unit*4;
+}
+
+.headerSection {
+  flex: 1;
+
+  @include for-tablet-landscape-up {
+    &:first-child, &:last-child {
+      display: none;
+    }
+  }
+}
+
+.brandName {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  margin-left: $base-unit*2;
+}
+
+.brandContainer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-right: $base-unit*8;
+
+  @include for-tablet-landscape-up {
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0;
+  }
+}
+
+.brandLogo {
+  height: $base-unit*12;
+}
+
+.navLinks {
+  @include for-tablet-landscape-up {
+    display: flex;
+    flex: 3;
+    justify-content: flex-end;
+    margin-top: $base-unit*4;
+    align-items: center;
+  }
+}
+
+.navLink {
+  padding: $base-unit*4 $base-unit*4;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include for-tablet-landscape-up {
+    text-align: center;
+    margin-left: $base-unit*4;
+  }
+}
