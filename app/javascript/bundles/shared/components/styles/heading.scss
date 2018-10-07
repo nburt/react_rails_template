@@ -1,0 +1,38 @@
+@import "../../../../../assets/stylesheets/variables";
+
+.h1 {
+  font-size: $base-unit * 10;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+.h2 {
+  font-size: $base-unit * 8;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+.h3 {
+  font-size: $base-unit * 7;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+.h4 {
+  font-size: $base-unit * 6;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}
+
+.h5 {
+  font-size: $base-unit * 5;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.h6 {
+  font-size: $base-unit * 4;
+  margin: $base-unit*4 0 $base-unit*2;
+  line-height: 1.25;
+}

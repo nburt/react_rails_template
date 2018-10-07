@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'typhoeus', '~> 1.3'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '~> 3.5', '>= 3.5.5'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
@@ -37,3 +38,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mini_racer', platforms: :ruby

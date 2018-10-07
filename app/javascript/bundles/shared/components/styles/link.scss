@@ -1,0 +1,18 @@
+@import '../../../../../assets/stylesheets/variables';
+
+.link {
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.primary {
+  color: $primary;
+
+  &:hover {
+    color: $primary-hover;
+  }
+}
+

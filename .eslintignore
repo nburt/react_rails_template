@@ -1,0 +1,12 @@
+node_modules/*
+dist/*
+.idea/*
+bin/*
+config/*
+db/*
+lib/*
+log/*
+public/*
+spec/*
+tmp/*
+vendor/*

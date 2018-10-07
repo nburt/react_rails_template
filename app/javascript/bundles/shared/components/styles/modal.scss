@@ -1,0 +1,63 @@
+@import "../../../../../assets/stylesheets/variables";
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  width: 80vw;
+  position: relative;
+  overflow: auto;
+  outline: none;
+  margin: auto;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 $base-unit*1.25 $base-unit*5 0 rgba(0, 0, 0, 0.5);
+  border-radius: $base-unit/2;
+  background-color: $white;
+}
+
+.modalInnerBody {
+  padding: $base-unit*4;
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+
+.header {
+  flex: 0 0 auto;
+  background-color: $white;
+  border-bottom: $base-unit/2 solid $white-three;
+  z-index: 1;
+}
+
+i.closeIcon {
+  display: flex;
+  justify-content: flex-end;
+  color: $warm-grey;
+
+  &:hover {
+    color: $black;
+    cursor: pointer;
+  }
+}
+
+.headerHeading {
+  padding: $base-unit*2;
+  justify-content: center;
+  display: flex;
+  color: $black;
+  text-align: center;
+  margin: 0;
+}
+
+.headerHr {
+  width: 100%;
+  margin: $base-unit*4 0;
+}
+
+.closeButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin: $base-unit*2 $base-unit*2 0 0;
+}

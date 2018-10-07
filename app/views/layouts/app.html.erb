@@ -7,6 +7,8 @@
 
   <%= stylesheet_link_tag 'frontend_app', media: 'all' %>
   <%= stylesheet_link_tag 'font_awesome', media: 'all' %>
+  <%= stylesheet_pack_tag 'appRouterBundle', media: 'all' %>
+  <%= javascript_pack_tag 'appRouterBundle' %>
 
   <%= favicon_link_tag "apple-touch-icon", rel: "apple-touch-icon", sizes: "180x180" %>
   <%= favicon_link_tag "favicon-32x32.png", rel: "icon", type: "image/png", sizes: "32x32" %>
@@ -17,6 +19,15 @@
 </head>
 
 <body>
-
+<%= react_component(
+        'AppRouter',
+        props: {
+            currentUser: {
+                email: current_user.email,
+                userUid: current_user.uid
+            }
+        },
+        prerender: false
+    ) %>
 </body>
 </html>
